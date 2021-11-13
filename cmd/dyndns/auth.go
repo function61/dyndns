@@ -1,6 +1,6 @@
 package main
 
-// Authorization for updating DNS recrord for a hostname. Each hostname gets its own token.
+// Authorization for updating DNS record for a hostname. Each hostname gets its own token.
 
 import (
 	"crypto/hmac"

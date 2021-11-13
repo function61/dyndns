@@ -35,17 +35,15 @@ Runs as a scheduled task (e.g. every 5 min). Knows its own hostname. Queries:
 - DNS for hostname's IP
 - Remote IP service to resolve our own public IP
 
-If these mismatch, ask server to update the DNS record.
+If these don't match, asks server to update the DNS record.
+
+
+### Quickstart
 
 Run `$ dyndns server update-token-gen <hostname>` to get update auth token for hostname.
 
 (The auth token is scoped to the hostname, so if an attacker manages to steal it, they can't make
 changes to other DNS records.)
 
-Then hook up `$ dyndns client <hostname> <hostnameAuthToken>` to your client's scheduler.
-
-
-### Quickstart
-
-TODO
+Then hook up `$ dyndns client <hostname> <hostnameAuthToken>` to your client machine's scheduler.
 

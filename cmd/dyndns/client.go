@@ -87,7 +87,10 @@ func resolveMyIP(ctx context.Context) (net.IP, error) {
 		return nil, err
 	}
 
-	ip := net.ParseIP(strings.TrimSuffix(string(body), "\n"))
+	// the response is "<ip>\n"
+	ipStr := strings.TrimSuffix(string(body), "\n")
+
+	ip := net.ParseIP(ipStr)
 	if ip == nil {
 		return nil, fmt.Errorf("ParseIP failed: %s", string(body))
 	}
