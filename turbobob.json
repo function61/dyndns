@@ -29,6 +29,7 @@
 		}
 	],
 	"os_arches": {
-		"linux-amd64": true
+		"linux-amd64": true,
+		"windows-amd64": true
 	}
 }
