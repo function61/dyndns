@@ -64,12 +64,12 @@ func serverEntrypoint() *cobra.Command {
 		Args:  cobra.ExactArgs(1),
 		Run: func(_ *cobra.Command, args []string) {
 			osutil.ExitIfError(func() error {
-				sekret, err := newUpdateTokenValidator()
+				updateTokenValidator, err := newUpdateTokenValidator()
 				if err != nil {
 					return err
 				}
 
-				fmt.Println(sekret.TokenFor(args[0]))
+				fmt.Println(updateTokenValidator.TokenFor(args[0]))
 
 				return nil
 			}())
