@@ -62,7 +62,7 @@ func client(ctx context.Context, hostname string, hostnameAuthToken string) erro
 		ctx,
 		serverBaseURL+"/api/hostname/"+hostname,
 		ezhttp.AuthBearer(hostnameAuthToken),
-		ezhttp.SendJson(hostnameRecord{
+		ezhttp.SendJSON(hostnameRecord{
 			A: myActualIP.String(),
 		})); err != nil {
 		return fmt.Errorf("DNS update failed: %v", err)

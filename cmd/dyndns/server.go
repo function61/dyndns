@@ -88,6 +88,8 @@ func server(ctx context.Context) error {
 	srv := &http.Server{
 		Handler: handler,
 		Addr:    ":80",
+
+		ReadHeaderTimeout: httputils.DefaultReadHeaderTimeout,
 	}
 
 	return httputils.CancelableServer(ctx, srv, srv.ListenAndServe)
@@ -133,7 +135,7 @@ func newServerHandler() (http.Handler, error) {
 		// best to keep low in DynDNS context since this means "accepted downtime window"
 		ttl := 5 * time.Minute
 
-		if _, err := ezhttp.Put(r.Context(), endpoint, ezhttp.AuthBearer(cloudflareToken), ezhttp.SendJson(struct {
+		if _, err := ezhttp.Put(r.Context(), endpoint, ezhttp.AuthBearer(cloudflareToken), ezhttp.SendJSON(struct {
 			Type    string `json:"type"`
 			Name    string `json:"name"`
 			Content string `json:"content"`
