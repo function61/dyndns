@@ -83,8 +83,6 @@ github.com/envoyproxy/go-control-plane v0.9.9-0.20210217033140-668b12f5399d/go.m
 github.com/envoyproxy/protoc-gen-validate v0.1.0/go.mod h1:iSmxcyjqTsJpI2R4NaDN7+kN2VEUnK/pcBlmesArF7c=
 github.com/fatih/color v1.7.0/go.mod h1:Zm6kSWBoL9eyXnKyktHP6abPY2pDugNf5KwzbycvMj4=
 github.com/fsnotify/fsnotify v1.4.9/go.mod h1:znqG4EE+3YCdAaPaxE2ZRY/06pZUdp0tY4IgpuI1SZQ=
-github.com/function61/gokit v0.0.0-20210715140145-f3b952cb0d48 h1:pQsjCOG7JhR1XeR1v3cassRnbOCjubcnqhLWSJMZvDA=
-github.com/function61/gokit v0.0.0-20210715140145-f3b952cb0d48/go.mod h1:nfJiV01CxBDMlVDv35jnAACc7vOBFGXlAZRILvTnD0E=
 github.com/function61/gokit v0.0.0-20211113175758-55b8934e62f5 h1:DR1cTz66jj4l8r0syZmqMc63GHyyOZGBgY+g5rL0jxM=
 github.com/function61/gokit v0.0.0-20211113175758-55b8934e62f5/go.mod h1:nfJiV01CxBDMlVDv35jnAACc7vOBFGXlAZRILvTnD0E=
 github.com/ghodss/yaml v1.0.0/go.mod h1:4dBDuWmgqj2HViK6kFavaiC9ZROes6MMH2rRYeMEF04=
