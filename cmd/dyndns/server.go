@@ -14,7 +14,6 @@ import (
 	"github.com/function61/gokit/net/http/ezhttp"
 	"github.com/function61/gokit/net/http/httputils"
 	"github.com/function61/gokit/os/osutil"
-	"github.com/gorilla/mux"
 	"github.com/spf13/cobra"
 )
 
@@ -106,9 +105,9 @@ func newServerHandler() (http.Handler, error) {
 		return nil, err
 	}
 
-	routes := mux.NewRouter()
-	routes.HandleFunc("/dyndns/api/hostname/{hostname}", func(w http.ResponseWriter, r *http.Request) {
-		hostname := mux.Vars(r)["hostname"]
+	routes := http.NewServeMux()
+	routes.HandleFunc("PUT /dyndns/api/hostname/{hostname}", func(w http.ResponseWriter, r *http.Request) {
+		hostname := r.PathValue("hostname")
 
 		if err := updateTokenValidator.ValidateUpdateToken(hostname, getBearerToken(r)); err != nil {
 			http.Error(w, err.Error(), http.StatusForbidden)
@@ -153,7 +152,7 @@ func newServerHandler() (http.Handler, error) {
 		}
 
 		w.WriteHeader(http.StatusOK)
-	}).Methods(http.MethodPut)
+	})
 
 	return routes, nil
 }
