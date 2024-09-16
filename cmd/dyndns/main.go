@@ -14,7 +14,7 @@ func main() {
 	if lambdautils.InLambda() {
 		handler, err := newServerHandler()
 		osutil.ExitIfError(err)
-		lambda.StartHandler(lambdautils.NewLambdaHttpHandlerAdapter(handler))
+		lambda.Start(lambdautils.NewLambdaHttpHandlerAdapter(handler))
 		return
 	}
 
